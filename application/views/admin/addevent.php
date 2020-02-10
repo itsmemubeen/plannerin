@@ -168,8 +168,8 @@
 <script type="text/javascript">
 
 // New York
-var startlat = 40.75637123;
-var startlon = -73.98545321;
+var startlat = 24.86677950;
+var startlon = 67.03112860;
 
 var options = {
  center: [startlat, startlon],
