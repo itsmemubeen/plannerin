@@ -170,26 +170,26 @@ Class Admin extends My_controller{
 
 	public function editEvent($event_id){
 
-		// if($this->form_validation->run('add_decorators_rules')){
-		// 	$insertDecorators = $this->input->post();
+		if($this->form_validation->run('add_event_rules')){
+			$insertDecorators = $this->input->post();
 
-		// 	$this->load->model('AdminModal','am');
-		// 	if($this->am->addCatering($insertDecorators)){
-		// 		$this->session->set_flashdata('msg','Catering Added Successfully');
-		// 		$this->session->set_flashdata('msg_class','alert-success');
-		// 	}
-		// 	else{
-		// 		$this->session->set_flashdata('msg','Catering Not Add Please Try Again!');
-		// 		$this->session->set_flashdata('msg_class','alert-danger');		 		    
-		// 	}
-		// 	return redirect('admin/addpackage');	
-		// }
-		// else{
+			$this->load->model('AdminModal','am');
+			if($this->am->addCatering($insertDecorators)){
+				$this->session->set_flashdata('msg','Catering Added Successfully');
+				$this->session->set_flashdata('msg_class','alert-success');
+			}
+			else{
+				$this->session->set_flashdata('msg','Catering Not Add Please Try Again!');
+				$this->session->set_flashdata('msg_class','alert-danger');		 		    
+			}
+			return redirect('admin/addpackage');	
+		}
+		else{
 			$this->load->model('mainModal','mm');
 				$selectedevents = $this->mm->selectEvent($event_id);
 
 				$this->load->view('admin/editevent',['selectedevents'=>$selectedevents]);
-		// }
+		}
 	}
 
 
