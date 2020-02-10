@@ -98,8 +98,8 @@
                       <td><?php echo $event->event_package?></td>
                       <td><?php echo $event->event_location?></td>
                       <td>
-                        <a href="<?php base_url() ?>/admin/event/edit/<?php echo $event->id?>">Edit</a>
-                        <a href="<?php base_url() ?>/admin/event/delete/<?php echo $event->id?>">Delete</a>
+                        <a href="<?php base_url() ?>/admin/editEvent/<?php echo $event->id?>">Edit</a>
+                        <a href="<?php base_url() ?>/admin/editEvent/<?php echo $event->id?>">Delete</a>
                       </td>
                     </tr>
                   <?php endforeach; ?>

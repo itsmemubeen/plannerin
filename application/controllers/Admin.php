@@ -1,12 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-Class Admin extends My_Controller{
+Class Admin extends My_controller{
 
-// public function __construct()
-//   {
-//    $this->load->model('AdminModal','am');    
-//   }
+  	public function __construct()
+  	{
+  		parent::__construct();
+	if(!$this->session->userdata('id'))
+		redirect('admin/index');
+   $this->load->model('AdminModal','am');
+   $this->load->model('mainModal','mm');
+  	}
 
 	public function index(){
 		$this->load->model('AdminModal','am');  
@@ -36,35 +40,23 @@ Class Admin extends My_Controller{
 		return redirect('admin/index');	
 	}
 	public function dashboard(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
+		
 		$this->load->view('admin/dashboard');
 	}
 	public function events(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
-		$this->load->model('mainModal','am');
-		$events = $this->am->showAllEvents();
+		$events = $this->mm->showAllEvents();
 		$this->load->view('admin/events',['events'=>$events]);
 	}
 		public function users(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
-		$this->load->model('mainModal','am');
 		$users = $this->am->showAllUsers();
 		$this->load->view('admin/users',['users'=>$users]);
 	}
 	public function bookings(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		$this->load->view('admin/bookings');
 	}
 	public function addUser(){
-		  if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		if($this->form_validation->run('add_user_rules')){
 			$insertUser = $this->input->post();
-			$this->load->model('AdminModal','am');
 			if($this->am->addUsers($insertUser)){
 				$this->session->set_flashdata('msg','User Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');
@@ -82,12 +74,8 @@ Class Admin extends My_Controller{
 		}
 	}
 	public function addEvent(){
-		  if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		if($this->form_validation->run('add_event_rules')){
 			$insertEvent = $this->input->post();
-
-			$this->load->model('AdminModal','am');
 			if($this->am->addEvent($insertEvent)){
 				$this->session->set_flashdata('msg','Event Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');
@@ -103,31 +91,22 @@ Class Admin extends My_Controller{
 		}
 	}
 	public function caterings(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		$this->load->model('mainModal','mm');
 		$caterings = $this->mm->showAllCaterings();
 		$this->load->view('admin/caterings',['caterings'=>$caterings]);
 	}
 	public function decoration(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		$this->load->model('mainModal','mm');
 		$decorators = $this->mm->showAllDecorations();
 		$this->load->view('admin/decoration',['decorators'=>$decorators]);
 	}
 	public function packages(){
-		if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
-
 		$this->load->model('mainModal','mm');
 		$packages = $this->mm->showAllPackages();
 
 		$this->load->view('admin/packages',['packages'=>$packages]);
 	}
 	public function addCatering(){
-		  if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		if($this->form_validation->run('add_catering_rules')){
 			$insertCatering = $this->input->post();
 
@@ -147,8 +126,6 @@ Class Admin extends My_Controller{
 		}
 	}
 		public function addDecorators(){
-		  if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -168,8 +145,6 @@ Class Admin extends My_Controller{
 		}
 	}
 		public function addPackages(){
-		  if(!$this->session->userdata('id'))
-		 return redirect('admin/index');
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -194,8 +169,7 @@ Class Admin extends My_Controller{
 	}
 
 	public function editEvent($event_id){
-		// if(!$this->session->userdata('id'))
-		//  return redirect('admin/index');
+
 		// if($this->form_validation->run('add_decorators_rules')){
 		// 	$insertDecorators = $this->input->post();
 
