@@ -191,6 +191,9 @@ Class Admin extends My_controller{
 				$this->load->view('admin/editevent',['selectedevents'=>$selectedevents]);
 		}
 	}
+	public function map(){
+		$this->load->view('admin/map');
+	}
 
 
 
