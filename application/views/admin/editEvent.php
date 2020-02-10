@@ -59,6 +59,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">City</label>
             <select name="event_city" class="form-control">
+              <option value="<?php echo $selectedevent->event_avenue; ?>"><?php echo $selectedevent->event_avenue; ?></option>
               <option value="karachi">Karachi</option>
               <option value="lahore">Lahore</option>
               <option value="islamabad">Islamabad</option>
