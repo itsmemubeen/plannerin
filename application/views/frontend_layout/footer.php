@@ -58,7 +58,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="">
-                        <p class="mb-0">© 2019 Jobya. Design with <i class="mdi mdi-heart text-danger"></i> by Themesdesign.</p>
+                        <p class="mb-0">© 2019 Planner In. Design with <i class="mdi mdi-heart text-danger"></i> by Themesdesign.</p>
                     </div>
                 </div>
             </div>
