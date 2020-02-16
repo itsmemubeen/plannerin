@@ -26,6 +26,10 @@ class mainModal extends CI_Model{
 		$query = $this->db->where(['id'=>$id])->get('events')->result();
 		return $query;
 	}
-	
+	public function registerUser($array){
+		// print_r($array);
+		// exit();
+		return $this->db->insert('users',$array);
+	}	
 }
 ?>

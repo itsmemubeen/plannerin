@@ -35,6 +35,23 @@ $config=[
                           'rules' => 'required'
                           ],
                      ],
+          'add_register_rules'=>[
+                         [
+                          'field' => 'name',
+                          'label' => 'Name',
+                          'rules' => 'required|max_length[20]'
+                          ],
+                          [
+                          'field' => 'email',
+                          'label' => 'Email',
+                          'rules' => 'required'
+                          ],
+                          [
+                         'field' => 'password',
+                         'label' => 'Password',
+                         'rules' => 'required'
+                         ],
+                     ],
           'add_catering_rules'=>[
                           [
                           'field' => 'catering_name',
