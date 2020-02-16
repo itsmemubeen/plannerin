@@ -40,13 +40,19 @@
                                             <div class="col-lg-3 col-md-6">
                                                 <div class="registration-form-box">
                                                     <i class="fa fa-list-alt"></i>
-                                                    <select id="select-category" class="demo-default">
-                                                        <option value="">Categories...</option>
-                                                        <option value="4">Accounting</option>
-                                                        <option value="1">IT & Software</option>
-                                                        <option value="3">Marketing</option>
-                                                        <option value="5">Banking</option>
-                                                    </select>
+                                                    <select name="event_category" class="form-control">
+                                                        <option value="art">Art/Litrature</option>
+                                                        <option value="beauty">Beauty & Lifestyle</option>
+                                                        <option value="charity">Charity</option>
+                                                        <option value="cinema">Cinema</option>
+                                                        <option value="comedy">Comedy</option>
+                                                        <option value="competition">Competition</option>
+                                                        <option value="concert">Concert / Music</option>
+                                                        <option value="conference">Conference</option>
+                                                        <option value="dance">Dance</option>
+                                                        <option value="deals">Deals</option>
+                                                        <option value="discussion">Discussion</option>
+                                                        </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-6">

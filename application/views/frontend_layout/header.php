@@ -1,3 +1,4 @@
+<?php $id = $this->session->userdata('id');?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -61,7 +62,7 @@
                 </div>
                 <div class="float-right">
                     <ul class="topbar-list list-unstyled d-flex" style="margin: 11px 0px;">
-                        <li class="list-inline-item"><a href="signup"><i class="mdi mdi-account mr-2"></i>SIGN UP</a></li>
+<li class="list-inline-item"><?php if($id == ""){?><a href="frontend/signup"><i class="mdi mdi-account mr-2"></i>SIGN UP</a><?php }else{ ?> <a href="signup"><i class="mdi mdi-account mr-2"></i></a> <?php } ?></li>
                         <!-- <li class="list-inline-item">
                             <select id="select-lang" class="demo-default">
                                 <option value="">Language</option>
