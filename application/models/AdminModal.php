@@ -5,7 +5,8 @@ class AdminModal extends CI_Model{
 	public function isvalidated($email,$password){
 		$query = $this->db->where(['email'=>$email,'password'=>$password])->get('users');
 		if($query->num_rows() == 1){
-			return true;
+			$row = $query->row();
+			return $row->role;
 		}else{
 			return false;
 		}

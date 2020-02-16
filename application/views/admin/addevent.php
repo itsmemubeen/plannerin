@@ -1,6 +1,6 @@
 <?php $page = "Add Event"; include('layout/header.php');?>
 <div class="container-fluid">
-          <h1 class="h3 mb-2 text-gray-800">Add Event <a href="event" class="btn btn-primary float-right" >Back</a></h1>
+          <h1 class="h3 mb-2 text-gray-800">Add Event <a href="<?php if($id == "1"){echo 'events';}else{ echo 'dashboard';}?>" class="btn btn-primary float-right" >Back</a></h1>
           <div class="card shadow mb-4">
             <?php if($error = $this->session->flashdata('msg') && $class = $this->session->flashdata('msg_class')):?>
               <div class="alert <?php echo $class; ?>"><?php echo $error; ?></div>

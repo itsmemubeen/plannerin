@@ -27,7 +27,7 @@ class Frontend extends CI_Controller {
 			if($this->mm->registerUser($registerUser)){
 				$this->session->set_flashdata('msg','User Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');
-				$this->load->view('admin/login');	    
+				// $this->load->view('admin/login');	    
 			}
 			else{
 				$this->session->set_flashdata('msg','User Not Add Please Try Again!');

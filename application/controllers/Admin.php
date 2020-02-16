@@ -5,9 +5,8 @@ Class Admin extends My_controller{
 
   	public function __construct()
   	{
-  		parent::__construct();
-	if(!$this->session->userdata('id'))
-		redirect('admin/index');
+	parent::__construct();
+	
    $this->load->model('AdminModal','am');
    $this->load->model('mainModal','mm');
   	}
@@ -23,7 +22,7 @@ Class Admin extends My_controller{
 			$id = $this->am->isvalidated($email,$pass);
 			if($id){
 				$this->session->set_userdata('id',$id);
-				 $this->load->view('admin/dashboard');
+				$this->load->view('admin/dashboard');
 			}
 			else{
 			$this->session->set_flashdata('Login_failed','Invalid Username/Password');
@@ -40,21 +39,30 @@ Class Admin extends My_controller{
 		return redirect('admin/index');	
 	}
 	public function dashboard(){
-		
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->view('admin/dashboard');
 	}
 	public function events(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$events = $this->mm->showAllEvents();
 		$this->load->view('admin/events',['events'=>$events]);
 	}
-		public function users(){
+	public function users(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$users = $this->am->showAllUsers();
 		$this->load->view('admin/users',['users'=>$users]);
 	}
 	public function bookings(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->view('admin/bookings');
 	}
 	public function addUser(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_user_rules')){
 			$insertUser = $this->input->post();
 			if($this->am->addUsers($insertUser)){
@@ -74,6 +82,8 @@ Class Admin extends My_controller{
 		}
 	}
 	public function addEvent(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_event_rules')){
 			$insertEvent = $this->input->post();
 			if($this->am->addEvent($insertEvent)){
@@ -91,22 +101,30 @@ Class Admin extends My_controller{
 		}
 	}
 	public function caterings(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->model('mainModal','mm');
 		$caterings = $this->mm->showAllCaterings();
 		$this->load->view('admin/caterings',['caterings'=>$caterings]);
 	}
 	public function decoration(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->model('mainModal','mm');
 		$decorators = $this->mm->showAllDecorations();
 		$this->load->view('admin/decoration',['decorators'=>$decorators]);
 	}
 	public function packages(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->model('mainModal','mm');
 		$packages = $this->mm->showAllPackages();
 
 		$this->load->view('admin/packages',['packages'=>$packages]);
 	}
 	public function addCatering(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_catering_rules')){
 			$insertCatering = $this->input->post();
 
@@ -125,7 +143,9 @@ Class Admin extends My_controller{
 			$this->load->view('admin/addCatering');
 		}
 	}
-		public function addDecorators(){
+	public function addDecorators(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -144,7 +164,9 @@ Class Admin extends My_controller{
 			$this->load->view('admin/addDecorators');
 		}
 	}
-		public function addPackages(){
+	public function addPackages(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -169,7 +191,8 @@ Class Admin extends My_controller{
 	}
 
 	public function editEvent($event_id){
-
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		if($this->form_validation->run('add_event_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -192,6 +215,8 @@ Class Admin extends My_controller{
 		}
 	}
 	public function map(){
+		if(!$this->session->userdata('id'))
+		redirect('admin/index');
 		$this->load->view('admin/map');
 	}
 

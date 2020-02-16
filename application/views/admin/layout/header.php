@@ -1,3 +1,4 @@
+<?php $id = $this->session->userdata('id');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,40 +70,57 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <?php if($id == "1"): ?>
       <li class="nav-item">
         <a class="nav-link" href="events">
           <span>All Events</span>
         </a>
       </li>
+      <?php endif;?>
+      <?php if($id == "2"): ?>
+      <li class="nav-item">
+        <a class="nav-link" href="addEvent">
+          <span>Add Events</span>
+        </a>
+      </li>
+      <?php endif;?>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+      <?php if($id == "1"): ?>
       <li class="nav-item">
         <a class="nav-link" href="users">
           <span>All Users</span>
         </a>
       </li>
+      <?php endif;?>
 
+    <?php if($id == "1"): ?>
     <li class="nav-item">
         <a class="nav-link" href="bookings">
           <span>All Bookings</span>
         </a>
       </li>
+      <?php endif;?>
+      <?php if($id == "1"): ?>
       <li class="nav-item">
         <a class="nav-link" href="caterings">
           <span>All Caterings</span>
         </a>
       </li>
+      <?php endif;?>
+      <?php if($id == "1"): ?>
       <li class="nav-item">
         <a class="nav-link" href="decoration">
           <span>All Decorators</span>
         </a>
       </li>
+      <?php endif;?>
+      <?php if($id == "1"): ?>
       <li class="nav-item">
         <a class="nav-link" href="packages">
           <span>All Packages</span>
         </a>
       </li>
+      <?php endif;?>
 
 
 
