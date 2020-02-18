@@ -82,6 +82,7 @@ Class Admin extends My_controller{
 		}
 	}
 	public function addEvent(){
+		Echo Hello BHai;s
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
 		if($this->form_validation->run('add_event_rules')){
