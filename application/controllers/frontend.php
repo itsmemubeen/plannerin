@@ -24,6 +24,8 @@ class Frontend extends CI_Controller {
 	{
 		if($this->form_validation->run('add_register_rules')){
 			$registerUser = $this->input->post();
+			print_r($registerUser);
+			exit();
 			if($this->mm->registerUser($registerUser)){
 				$this->session->set_flashdata('msg','User Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');

@@ -148,10 +148,10 @@
           </div>
 
 <b>Coordinates</b>
-<form>
+<!-- <form>
 <input type="text" style="visibility: hidden;" name="lat" id="lat" size=12 value="">
 <input type="text" style="visibility: hidden;" name="lon" id="lon" size=12 value="">
-</form>
+</form> -->
 
 <b>Address Lookup</b>
 <div id="search">

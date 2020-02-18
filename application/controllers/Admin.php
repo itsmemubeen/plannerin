@@ -86,6 +86,8 @@ Class Admin extends My_controller{
 		redirect('admin/index');
 		if($this->form_validation->run('add_event_rules')){
 			$insertEvent = $this->input->post();
+			print_r($insertEvent);
+			exit();
 			if($this->am->addEvent($insertEvent)){
 				$this->session->set_flashdata('msg','Event Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');
