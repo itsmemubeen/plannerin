@@ -41,28 +41,33 @@ Class Admin extends My_controller{
 	public function dashboard(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$this->load->view('admin/dashboard');
 	}
 	public function events(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$events = $this->mm->showAllEvents();
 		$this->load->view('admin/events',['events'=>$events]);
 	}
 	public function users(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
-		$users = $this->am->showAllUsers();
+
+		$users = $this->mm->showAllUsers();
 		$this->load->view('admin/users',['users'=>$users]);
 	}
 	public function bookings(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$this->load->view('admin/bookings');
 	}
 	public function addUser(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_user_rules')){
 			$insertUser = $this->input->post();
 			if($this->am->addUsers($insertUser)){
@@ -82,13 +87,13 @@ Class Admin extends My_controller{
 		}
 	}
 	public function addEvent(){
-		Echo Hello BHai;s
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_event_rules')){
 			$insertEvent = $this->input->post();
-			print_r($insertEvent);
-			exit();
+			// print_r($insertEvent);
+			// exit();
 			if($this->am->addEvent($insertEvent)){
 				$this->session->set_flashdata('msg','Event Added Successfully');
 				$this->session->set_flashdata('msg_class','alert-success');
@@ -106,6 +111,7 @@ Class Admin extends My_controller{
 	public function caterings(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$this->load->model('mainModal','mm');
 		$caterings = $this->mm->showAllCaterings();
 		$this->load->view('admin/caterings',['caterings'=>$caterings]);
@@ -113,6 +119,7 @@ Class Admin extends My_controller{
 	public function decoration(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$this->load->model('mainModal','mm');
 		$decorators = $this->mm->showAllDecorations();
 		$this->load->view('admin/decoration',['decorators'=>$decorators]);
@@ -120,6 +127,7 @@ Class Admin extends My_controller{
 	public function packages(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		$this->load->model('mainModal','mm');
 		$packages = $this->mm->showAllPackages();
 
@@ -128,6 +136,7 @@ Class Admin extends My_controller{
 	public function addCatering(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_catering_rules')){
 			$insertCatering = $this->input->post();
 
@@ -149,6 +158,7 @@ Class Admin extends My_controller{
 	public function addDecorators(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -170,6 +180,7 @@ Class Admin extends My_controller{
 	public function addPackages(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_decorators_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -196,6 +207,7 @@ Class Admin extends My_controller{
 	public function editEvent($event_id){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+
 		if($this->form_validation->run('add_event_rules')){
 			$insertDecorators = $this->input->post();
 
@@ -220,6 +232,7 @@ Class Admin extends My_controller{
 	public function map(){
 		if(!$this->session->userdata('id'))
 		redirect('admin/index');
+		
 		$this->load->view('admin/map');
 	}
 
