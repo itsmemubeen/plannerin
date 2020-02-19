@@ -10,8 +10,8 @@
                 <?php echo form_open('admin/addEvent'); ?>
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Name','name'=>'name','value'=>set_value('name')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Name','name'=>'name','value'=>'asd'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Name','name'=>'name','value'=>set_value('name')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Name','name'=>'name','value'=>'asd'])?> -->
             <?php echo form_error('name',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
@@ -42,8 +42,8 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Description</label>
            <!--  <textarea class="form-control form-control-user" name="event_description" value="<?php echo set_value('event_description')?>"></textarea> -->
-           <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_description','value'=>set_value('event_description')])?> -->
-           <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_description','value'=>'asdasdasdasdasd'])?>
+           <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_description','value'=>set_value('event_description')])?>
+           <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_description','value'=>'asdasdasdasdasd'])?> -->
             <?php echo form_error('event_description',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
@@ -67,61 +67,62 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Start Date</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_startdate','value'=>set_value('event_startdate'), 'type'=>'date'])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_startdate','value'=>'22/02/2222', 'type'=>'date'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_startdate','value'=>set_value('event_startdate'), 'type'=>'date'])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_startdate','value'=>'22/02/2222', 'type'=>'date'])?> -->
             <?php echo form_error('event_startdate',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Start Time</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_starttime','value'=>set_value('event_starttime'), 'type'=>'time'])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_starttime','value'=>'11:00 AM', 'type'=>'time'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_starttime','value'=>set_value('event_starttime'), 'type'=>'time'])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_starttime','value'=>'11:00 AM', 'type'=>'time'])?> -->
             <?php echo form_error('event_starttime',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">End Date</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_enddate','value'=>'22/02/2222', 'type'=>'date'])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_enddate','value'=>set_value('event_enddate'), 'type'=>'date'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_enddate','value'=>'22/02/2222', 'type'=>'date'])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_enddate','value'=>set_value('event_enddate'), 'type'=>'date'])?> -->
             <?php echo form_error('event_enddate',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">End Time</label>
-            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_endtime','value'=>'11:00 AM', 'type'=>'time'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_endtime','value'=>set_value('event_endtime'), 'type'=>'time'])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','name'=>'event_endtime','value'=>'11:00 PM', 'type'=>'time'])?> -->
             <?php echo form_error('event_endtime',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Contact</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Contact','name'=>'event_contact','value'=>set_value('event_contact')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Contact','name'=>'event_contact','value'=>'123123123123123'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Contact','name'=>'event_contact','value'=>set_value('event_contact')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Contact','name'=>'event_contact','value'=>'123123123123123'])?> -->
             <?php echo form_error('event_contact',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Email Adress','name'=>'event_email','value'=>set_value('event_email')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Email Adress','name'=>'event_email','value'=>'asdasdasdasd'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Email Adress','name'=>'event_email','value'=>set_value('event_email')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Email Adress','name'=>'event_email','value'=>'asdasdasdasd'])?> -->
             <?php echo form_error('event_email',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Website</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Website','name'=>'event_website','value'=>set_value('event_website')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Website','name'=>'event_website','value'=>'asdasdasdasdasd'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Website','name'=>'event_website','value'=>set_value('event_website')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Enter Website','name'=>'event_website','value'=>'asdasdasdasdasd'])?> -->
             <?php echo form_error('event_website',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Facebook</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Facebook','name'=>'event_facebook','value'=>set_value('event_facebook')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Facebook','name'=>'event_facebook','value'=>'asdasdadsasd'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Facebook','name'=>'event_facebook','value'=>set_value('event_facebook')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Facebook','name'=>'event_facebook','value'=>'asdasdadsasd'])?> -->
             <?php echo form_error('event_facebook',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Instagram</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Instagram','name'=>'event_Instagram','value'=>set_value('event_Instagram')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Instagram','name'=>'event_Instagram','value'=>'asdadsasdasdasd'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Instagram','name'=>'event_Instagram','value'=>set_value('event_Instagram')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Instagram','name'=>'event_Instagram','value'=>'asdadsasdasdasd'])?> -->
             <?php echo form_error('event_Instagram',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Twitter</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Twitter','name'=>'event_twitter','value'=>set_value('event_twitter')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Twitter','name'=>'event_twitter','value'=>'asdasdasdasdasdads'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Twitter','name'=>'event_twitter','value'=>set_value('event_twitter')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user','placeholder'=>'Twitter','name'=>'event_twitter','value'=>'asdasdasdasdasdads'])?> -->
             <?php echo form_error('event_twitter',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
@@ -144,8 +145,8 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1" class="ticket-price">Ticket Price</label>
-            <!-- <?php echo form_input(['class'=>'form-control form-control-user ticket-price','placeholder'=>'Ticket Price','name'=>'event_ticket_price','value'=>set_value('event_ticket_price')])?> -->
-            <?php echo form_input(['class'=>'form-control form-control-user ticket-price','placeholder'=>'Ticket Price','name'=>'event_ticket_price','value'=>'500'])?>
+            <?php echo form_input(['class'=>'form-control form-control-user ticket-price','placeholder'=>'Ticket Price','name'=>'event_ticket_price','value'=>set_value('event_ticket_price')])?>
+            <!-- <?php echo form_input(['class'=>'form-control form-control-user ticket-price','placeholder'=>'Ticket Price','name'=>'event_ticket_price','value'=>'500'])?> -->
             <?php echo form_error('event_ticket_price',"<div class='text-danger'>","</div>");?>
           </div>
           <div class="form-group">
@@ -161,8 +162,8 @@
 
 <b>Coordinates</b>
 <!-- <form> -->
-<input type="text" style="visibility: hidden;" name="latitude" id="lat" size=12 value="123123123">
-<input type="text" style="visibility: hidden;" name="longitude" id="lon" size=12 value="3423e23e">
+<input type="text" style="visibility: hidden;" name="latitude" id="lat" size=12 value="">
+<input type="text" style="visibility: hidden;" name="longitude" id="lon" size=12 value="">
 <!-- </form> -->
 
 <!-- <b>Address Lookup</b> -->
